@@ -19,6 +19,7 @@ are removed. The app's sampled search is replaced with sorted occupied bounds
 and direct gap examination. **The store builds do not use this module yet.**
 No app code, backend, artwork, credentials, purchase logic or sync data is included.
 MIT license applies to this component only, not to MyGameShelf or its assets.
+The generated Gradle wrapper retains Gradle's Apache-2.0 licensing notices.
 
 ## Usage
 
