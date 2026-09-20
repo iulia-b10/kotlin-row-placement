@@ -1,9 +1,5 @@
 # Row placement
 
-Private preparation for a possible Kotlin ecosystem contribution. **Not published.**
-Do not publish, announce on X, or create a public repository until the owner gives
-the release instruction after MyGameShelf is live on both iOS and Android.
-
 A small Kotlin Multiplatform engine for placing variable-width items into rows.
 It finds the legal position nearest the requested left edge, with configurable
 spacing and padding, and falls back to another row when needed. There is no
@@ -11,7 +7,6 @@ fixed item limit and no sampled position grid.
 
 ## Scope and origin
 
-Prepared from private monorepo commit `7351ae999` without exporting its history.
 Adapted from the placement problem in MyGameShelf's `DecorRunGeometry` and
 `ShelfStore.visibleDecorPlacement`. This is a new, isolated implementation:
 app-specific game counts, dimensions, themes, models and Compose dependencies
@@ -63,7 +58,7 @@ The runnable consumer is in `example/` and depends on the library project.
   rejected to avoid returning an overlapping placement.
 - Per call: O(sum(n log n)) time, O(max(n)) temporary storage over row occupancies.
 
-## Run privately
+## Run the tests and example
 
 One command on an Apple Silicon Mac with JDK 21 and Xcode:
 
@@ -95,7 +90,7 @@ Tests cover narrow gaps, exact fits, overflow, padding, nearest-position ties,
 overlapping inputs, fallback rows, scaled widths, more than three decorations,
 invalid inputs and 1,000 seeded layouts compared with an exhaustive oracle.
 
-### Private verification, September 14, 2026
+### Verification, September 14, 2026
 
 - JVM: 20 tests passed, 0 skipped/failures/errors.
 - Wasm/Node: the same 20 tests passed, 0 skipped/failures/errors.
@@ -109,13 +104,3 @@ invalid inputs and 1,000 seeded layouts compared with an exhaustive oracle.
   project. Static scope mapping inherits app platform labels from the directory;
   actual affected consumers are this library and its example only. No unmapped
   paths or coverage gaps were reported. App-wide builds were not rerun.
-
-## Before public release
-
-- Confirm both public store links and the owner's instruction to publish.
-- Inspect the exact export for app assets, secrets and unrelated repository files.
-- Confirm the copyright holder/license choice and rerun verification from a clean
-  clone. The standalone export and Gradle 8.11.1 wrapper are already prepared.
-- Add a small visual demonstration if useful; do not claim this is the complete
-  shelf renderer or that current store builds already consume this package.
-- Publish a tagged version, link it from the devlog and Devpost, then announce it.
